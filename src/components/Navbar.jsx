@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { HashLink as Link } from "react-router-hash-link";
+
+<Link smooth to="/#about" className="hover:text-indigo-400">
+  About
+</Link>;
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
