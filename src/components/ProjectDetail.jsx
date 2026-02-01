@@ -47,7 +47,7 @@ const ProjectDetail = () => {
         src={project.image}
         alt={`Screenshot of ${project.name} project`}
         className="w-full rounded-lg mb-6 object-cover"
-        loading="lazy"
+        loading="eager"
       />
 
       <p className="mb-4">
