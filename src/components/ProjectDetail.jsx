@@ -96,6 +96,17 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {project.feedback && (
+        <section aria-labelledby="feedback" className="mb-6">
+          <h2
+            id="feedback"
+            className="text-2xl font-semibold mb-2 text-indigo-300"
+          >
+            Assessment / Feedback
+          </h2>
+          <p className="text-gray-300">{project.feedback}</p>
+        </section>
+      )}
       {/* Problem & Solution */}
       <section aria-labelledby="problem-solution" className="mb-6">
         <h2 id="problem-solution" className="sr-only">
