@@ -24,6 +24,7 @@ const Projects = () => {
             <Link
               key={project.id}
               to={`/projects/${project.id}`}
+              aria-label={`View details for ${project.name}`}
               className="focus:outline-none focus:ring-2 focus:ring-indigo-400 rounded"
             >
               <article

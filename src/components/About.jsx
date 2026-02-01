@@ -55,6 +55,7 @@ const About = () => {
               aria-valuenow={(parseInt(skillsLevels[skill]) * 100) / 12}
               aria-valuemin="0"
               aria-valuemax="100"
+              tabIndex="0"
             >
               <span className="text-gray-300 font-medium mb-2">{skill}</span>
               <div className="w-full bg-gray-800 rounded-full h-8 overflow-hidden">
@@ -95,6 +96,7 @@ const About = () => {
             href={aboutInfo.contact.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit my GitHub profile"
             className="text-indigo-400 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             GitHub
@@ -103,6 +105,7 @@ const About = () => {
           <a
             href={`${aboutInfo.contact.email}?subject=Portfolio%20Inquiry&body=Hi%20Mohammed,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20opportunity.`}
             className="text-indigo-400 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            aria-label="Send me an email"
           >
             email
           </a>

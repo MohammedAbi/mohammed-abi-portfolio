@@ -115,8 +115,8 @@ const ProjectDetail = () => {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-full shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
           aria-label={`View ${project.name} project on GitHub`}
+          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-full shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
         >
           <FaGithub aria-hidden="true" /> GitHub
         </a>
@@ -124,8 +124,8 @@ const ProjectDetail = () => {
           href={project.liveDemo}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 rounded-full shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
           aria-label={`View live demo of ${project.name}`}
+          className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 rounded-full shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
         >
           <FiExternalLink aria-hidden="true" /> Live Demo
         </a>

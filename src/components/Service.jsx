@@ -60,7 +60,7 @@ const Service = () => {
               key={service.id}
               className="bg-gray-800 px-6 pb-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
               role="listitem"
-              tabIndex={0} // makes each service focusable for keyboard users
+              tabIndex={0} 
               aria-labelledby={`service-title-${service.id}`}
             >
               {/* Number */}

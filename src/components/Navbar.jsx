@@ -47,7 +47,8 @@ function Navbar() {
         <button
           className="md:hidden text-3xl z-50"
           onClick={toggleMenu}
-          aria-label="Toggle Menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
