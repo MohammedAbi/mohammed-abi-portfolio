@@ -41,17 +41,27 @@ const Service = () => {
     <section
       className="bg-gray-900 text-gray-100 py-20 scroll-mt-32"
       id="service"
+      aria-labelledby="services-heading"
     >
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
-        <h2 className="text-4xl font-bold text-center mb-12 tracking-wide">
+        <h2
+          id="services-heading"
+          className="text-4xl font-bold text-center mb-12 tracking-wide"
+        >
           My Services
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-16">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-16"
+          role="list"
+        >
           {services.map((service) => (
-            <div
+            <article
               key={service.id}
-              className="bg-gray-800 px-6 pb-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl"
+              className="bg-gray-800 px-6 pb-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              role="listitem"
+              tabIndex={0} // makes each service focusable for keyboard users
+              aria-labelledby={`service-title-${service.id}`}
             >
               {/* Number */}
               <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 text-right">
@@ -59,13 +69,16 @@ const Service = () => {
               </div>
 
               {/* Title */}
-              <h3 className="mt-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500">
+              <h3
+                id={`service-title-${service.id}`}
+                className="mt-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500"
+              >
                 {service.title}
               </h3>
 
               {/* Description */}
               <p className="mt-2 text-gray-300">{service.description}</p>
-            </div>
+            </article>
           ))}
         </div>
       </div>
