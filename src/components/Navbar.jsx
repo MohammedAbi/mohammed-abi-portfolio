@@ -5,37 +5,25 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-  };
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    return () => (document.body.style.overflow = "auto");
   }, [menuOpen]);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768 && menuOpen) {
-        setMenuOpen(false);
-      }
+      if (window.innerWidth >= 768 && menuOpen) setMenuOpen(false);
     };
     window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, [menuOpen]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -46,14 +34,11 @@ function Navbar() {
     >
       <div className="container mx-auto px-8 md:px-16 lg:px-24 flex justify-between items-center">
         {/* Logo */}
-        <a
-          href="#hero"
-          className="text-xl font-extrabold text-transparent bg-clip-text bg-white"
-        >
+        <Link smooth to="/#hero" className="text-xl font-extrabold text-white">
           Mohammed A.
-        </a>
+        </Link>
 
-        {/* Hamburger Menu Button */}
+        {/* Hamburger */}
         <button
           className="md:hidden text-3xl z-50"
           onClick={toggleMenu}
@@ -62,67 +47,48 @@ function Navbar() {
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Links */}
         <div className="hidden md:flex space-x-8 font-medium text-2xl">
-          <a
-            href="#about"
-            className="hover:text-indigo-400 transition-colors duration-300"
-          >
+          <Link smooth to="/#about" className="hover:text-indigo-400">
             About
-          </a>
-          <a
-            href="#service"
-            className="hover:text-indigo-400 transition-colors duration-300"
-          >
+          </Link>
+          <Link smooth to="/#service" className="hover:text-indigo-400">
             Services
-          </a>
-          <a
-            href="#project"
-            className="hover:text-indigo-400 transition-colors duration-300"
-          >
+          </Link>
+          <Link smooth to="/#projects" className="hover:text-indigo-400">
             Projects
-          </a>
+          </Link>
         </div>
 
-        {/* Call-to-Action Button - Desktop */}
-        <a
-          href="#contact"
+        {/* CTA Button */}
+        <Link
+          smooth
+          to="/#contact"
           className="hidden md:inline bg-indigo-600 text-white text-2xl px-6 py-2 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300"
         >
           Contact
-        </a>
+        </Link>
 
-        {/* Mobile Full-Screen Menu */}
+        {/* Mobile Menu */}
         {menuOpen && (
           <div className="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 text-2xl">
-            <a
-              href="#about"
-              className="hover:text-indigo-400"
-              onClick={toggleMenu}
-            >
+            <Link smooth to="/#about" onClick={toggleMenu}>
               About Me
-            </a>
-            <a
-              href="#service"
-              className="hover:text-indigo-400"
-              onClick={toggleMenu}
-            >
+            </Link>
+            <Link smooth to="/#service" onClick={toggleMenu}>
               Services
-            </a>
-            <a
-              href="#project"
-              className="hover:text-indigo-400"
-              onClick={toggleMenu}
-            >
+            </Link>
+            <Link smooth to="/#projects" onClick={toggleMenu}>
               Projects
-            </a>
-            <a
-              href="#contact"
-              className="bg-indigo-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300"
+            </Link>
+            <Link
+              smooth
+              to="/#contact"
+              className="bg-indigo-600 text-white px-6 py-2 rounded-full shadow-lg"
               onClick={toggleMenu}
             >
               Contact
-            </a>
+            </Link>
           </div>
         )}
       </div>
