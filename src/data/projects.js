@@ -7,6 +7,7 @@ import imgP3 from "../assets/image-p3.png";
 import imgP7 from "../assets/image-p7.png";
 // import imgP8 from "../assets/image-p8.png";
 import imgP9 from "../assets/image-p9.png";
+import imageP7IssueHub from "../assets/image-p7-issuehub.png";
 import imgHolidaze from "../assets/image-holidaze.png";
 
 const projects = [
@@ -141,6 +142,38 @@ const projects = [
     ],
     feedback: null,
   },
+  {
+  id: 7,
+  name: "IssueHub",
+  type: "Issue Tracking Platform",
+  image: imageP7IssueHub,
+  technologies: [
+    "React",
+    "TypeScript",
+    "TailwindCSS",
+    "Vite",
+    "Express",
+    "MongoDB",
+    "JWT",
+  ],
+  github: "https://github.com/MohammedAbi/issuehub",
+  liveDemo: "https://issuehubtracker.netlify.app/",
+  problem:
+    "Build a full-stack issue tracking platform with authentication, role-based access, issue management, and team collaboration features.",
+  solution:
+    "Developed a MERN-based application with JWT authentication, CRUD issue management, filtering, search, dashboard statistics, and responsive UI.",
+  whatIDid: [
+    "Built a full-stack MERN application",
+    "Implemented JWT authentication and authorization",
+    "Created CRUD functionality for issue management",
+    "Added filtering, sorting, and search features",
+    "Developed dashboard statistics and activity tracking",
+    "Designed a responsive UI with Tailwind CSS",
+    "Integrated MongoDB for data persistence",
+    "Implemented real-time toast notifications",
+  ],
+  feedback: null,
+},
 
   // Optional / secondary projects
   // {
